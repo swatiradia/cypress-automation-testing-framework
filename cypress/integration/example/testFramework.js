@@ -13,7 +13,7 @@ describe('Framework building', function(){
     })
 
     it('Test case 1', function(){
-        // defaultCommandTimeout is only applied to this spec file
+// defaultCommandTimeout is only applied to this spec file
         // Cypress.config('defaultCommandTimeout', 8000)
 
 // creating an object of homePage class.
@@ -22,7 +22,7 @@ describe('Framework building', function(){
         const checkoutPageObject = new checkoutPage()
         const deliveryAddressPageObject = new deliveryAddressPage()
 
-        cy.visit('https://rahulshettyacademy.com/angularpractice/')
+        cy.visit(Cypress.env('url')+"/angularpractice")
         homePageObject.getNameEditBox().type(this.data.name)
         homePageObject.selectGenderDropdown().select(this.data.gender)
         homePageObject.getTwoWayDataBindingEditBox().should('have.value',this.data.name)
@@ -31,14 +31,35 @@ describe('Framework building', function(){
 
         homePageObject.getShopTab().click()
 
-        // using foreach loop to select all the products passed from custom comands added in commands.js
+// using foreach loop to select all the products passed from custom comands added in commands.js
         this.data.productName.forEach((element) => cy.selectProduct(element));
 
         productPageObject.getCheckoutButton().click()
 
+// Code to check the cost of all the product adds up to the Total displayed
+        var totalCostCal = 0
+        productPageObject.getTheProductsCost().each(($e1, index, $list)=>{
+            const productCost = $e1.text()
+            var resultProductCost = productCost.split(" ")
+            resultProductCost = resultProductCost[1].trim()
+            totalCostCal = Number(totalCostCal) + Number(resultProductCost)
+        }).then(function(){
+            cy.log(totalCostCal)
+        })
+
+// Assertion to check the summed up cost equals total cost
+        productPageObject.getTotal().then(function(element){
+            const totalBill = element.text()
+            var resultBill = totalBill.split(" ")
+            resultBill = resultBill[1].trim()
+            expect(Number(resultBill)).to.equal(totalCostCal)
+
+        })
+
         checkoutPageObject.getCheckoutButton().click()
         deliveryAddressPageObject.getCountryDropdownBox().type('India')
-        // defaultCommandTimeout is only applied to this spec file
+
+// defaultCommandTimeout is only applied to this spec file
         cy.get('.suggestions > ul > li > a').click()
         deliveryAddressPageObject.getTermsAndConditionsCheckbox().click({force: true})
         deliveryAddressPageObject.getPurchaseButton().click()
