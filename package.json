@@ -6,7 +6,7 @@
   "scripts": {
     "open": "node_modules/.bin/cypress open",
     "test": "node_modules/.bin/cypress run",
-    "headTest": "npm run test -- --headed",
+    "headedTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --headed --browser chrome",
     "recordDashboardTest": "npm run test -- --record --key 459347cc-ebd0-4504-b4ba-50df32c0eafc --reporter mochawesome"
   },
@@ -17,6 +17,8 @@
     "cypress-iframe": "^1.0.1"
   },
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.3",
+    "@cypress/browserify-preprocessor": "^3.0.2",
     "mochawesome": "^7.1.3"
   }
 }
