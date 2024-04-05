@@ -37,3 +37,5 @@ module.exports = defineConfig({
     specPattern: 'cypress/integration/example/cucumberFiles/*.feature'
   },
 });
+
+// cucmber can only create messages of results, cannot create JSON formaet result, to do that it needs plugin

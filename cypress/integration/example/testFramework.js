@@ -23,6 +23,7 @@ describe('Framework building', function(){
         const deliveryAddressPageObject = new deliveryAddressPage()
 
         cy.visit(Cypress.env('url')+"/angularpractice")
+        
         homePageObject.getNameEditBox().type(this.data.name)
         homePageObject.selectGenderDropdown().select(this.data.gender)
         homePageObject.getTwoWayDataBindingEditBox().should('have.value',this.data.name)
@@ -57,6 +58,7 @@ describe('Framework building', function(){
         })
 
         checkoutPageObject.getCheckoutButton().click()
+        
         deliveryAddressPageObject.getCountryDropdownBox().type('India')
 
 // defaultCommandTimeout is only applied to this spec file

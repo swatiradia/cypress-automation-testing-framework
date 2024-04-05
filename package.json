@@ -10,11 +10,19 @@
     "chromeTest": "npm run test -- --headed --browser chrome",
     "recordDashboardTest": "npm run test -- --record --key 459347cc-ebd0-4504-b4ba-50df32c0eafc --reporter mochawesome"
   },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/reports/cucumberReports/results.json"
+    }
+  },
   "author": "Swati Radia",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.7.2",
-    "cypress-iframe": "^1.0.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-iframe": "^1.0.1",
+    "multiple-cucumber-html-reporter": "^3.6.2"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.0.3",
