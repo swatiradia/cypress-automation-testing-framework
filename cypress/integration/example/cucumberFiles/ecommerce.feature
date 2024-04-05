@@ -7,6 +7,8 @@ Feature: End-to-end ECommerce validation
     Given I open the ECommerce page
     When I click on Shop option on the menu
     When I add items to the cart
+    | product    |  product    |
+    | Blackberry |  Nokia Edge |
     When validate the total of the items is calculated correctly
     When select the country 
     Then I submit and verify Thank you message

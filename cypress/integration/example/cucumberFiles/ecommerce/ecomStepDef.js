@@ -14,9 +14,10 @@ Given('I open the ECommerce page', ()=>{
 
 })
 
-When('I add items to the cart', ()=>{
+When('I add items to the cart', function(dataTable){
 // using foreach loop to select all the products passed from custom comands added in commands.js
-    this.data.productName.forEach((element) => cy.selectProduct(element));
+    cy.selectProduct(dataTable.rawTable[1][0])
+    cy.selectProduct(dataTable.rawTable[1][1])
     productPageObject.getCheckoutButton().click()
 })
 
@@ -30,14 +31,14 @@ When('validate the total of the items is calculated correctly', ()=>{
         resultProductCost = resultProductCost[1].trim()
         totalCostCal = Number(totalCostCal) + Number(resultProductCost)
     }).then(function(){
-        y.log(totalCostCal)
+        cy.log(totalCostCal)
     })
 
 // Assertion to check the summed up cost equals total cost
     productPageObject.getTotal().then(function(element){
         const totalBill = element.text()
         var resultBill = totalBill.split(" ")
-        esultBill = resultBill[1].trim()
+        resultBill = resultBill[1].trim()
         expect(Number(resultBill)).to.equal(totalCostCal)
     })
 
