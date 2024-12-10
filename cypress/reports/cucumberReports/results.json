@@ -4,22 +4,133 @@
     "elements": [
       {
         "description": "",
-        "id": "end-to-end-ecommerce-validation;fillling-the-form-to-shop",
+        "id": "end-to-end-ecommerce-validation;ecommerce-product-order-placement",
         "keyword": "Scenario",
-        "line": 15,
-        "name": "Fillling the form to shop",
+        "line": 6,
+        "name": "ECommerce product order placement",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 16,
+            "line": 7,
             "name": "I open the ECommerce page",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 2413000000
+              "duration": 2435000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I click on Shop option on the menu",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "product",
+                      "product"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Blackberry",
+                      "Nokia Edge"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I add items to the cart",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 275000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "validate the total of the items is calculated correctly",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 90000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "select the country",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5227000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I submit and verify Thank you message",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 5
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "end-to-end-ecommerce-validation;fillling-the-form-to-shop",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Fillling the form to shop",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I open the ECommerce page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1046000000
             }
           },
           {
@@ -42,14 +153,14 @@
               }
             ],
             "keyword": "When ",
-            "line": 17,
+            "line": 19,
             "name": "I fill the form deatils",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 341000000
+              "duration": 319000000
             }
           },
           {
@@ -70,34 +181,34 @@
               }
             ],
             "keyword": "Then ",
-            "line": 20,
+            "line": 22,
             "name": "The fields are validate according to requiremnet",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 13000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 23,
+            "line": 25,
             "name": "I click on Shop option on the menu",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 4365000000
+              "duration": 1761000000
             }
           }
         ],
         "tags": [
           {
             "name": "@Smoke",
-            "line": 14
+            "line": 16
           }
         ],
         "type": "scenario"

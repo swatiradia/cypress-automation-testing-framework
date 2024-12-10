@@ -19,7 +19,7 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
 
-// Overrides the defaultCommandTimeout fro all the spec file to 6000
+// Overrides the defaultCommandTimeout for all the spec file to 8000
   projectId: "k51esp",
   defaultCommandTimeout: 8000,
 
@@ -38,4 +38,4 @@ module.exports = defineConfig({
   },
 });
 
-// cucmber can only create messages of results, cannot create JSON formaet result, to do that it needs plugin
+// cucmber can only create messages of results, cannot create JSON format result, to do that it needs plugin
